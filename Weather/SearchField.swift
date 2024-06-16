@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchField: View {
     @Binding var cityName: String
-    var searchAction: () -> Void
+    @ObservedObject var myModelView: ModelView
     
     var body: some View {
         HStack {
@@ -20,7 +20,7 @@ struct SearchField: View {
                 .font(.system(size: 23, weight: .bold, design: .rounded))
             Button(action: {
                 // do all activity here
-                searchAction()
+                myModelView.getWeatherData(tempUrlString: urlString, cityName: cityName, myKey: myKey)
             }) {
                 Text("Search")
                     .textCase(.uppercase)
@@ -34,5 +34,5 @@ struct SearchField: View {
 }
 
 #Preview {
-    SearchField(cityName: .constant("Muzaffarpur"), searchAction: <#() -> Void#>)
+    SearchField(cityName: .constant("Muzaffarpur"), myModelView: ModelView())
 }

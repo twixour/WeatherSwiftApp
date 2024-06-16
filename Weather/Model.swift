@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+struct WeatherForecast: Codable {
+
+    struct Weather: Codable {
+        let description: String
+        let main: String
+    }
+    let name: String?
+    let weather: [Weather]
+    
+    let main: [String: Double]
+    let wind: [String: Double]
+    
+}
+
