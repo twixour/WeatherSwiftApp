@@ -8,6 +8,8 @@
 import SwiftUI
 
 // myKey is the key i have stored in a separate file which is the key you will get with api (open weather api)
+
+// urlString is the link address
 // also you will find the link for that as well, link's format will be like this "https://api.openweathermap.org/data/2.5/weather?&units=metric&q="
 
 
